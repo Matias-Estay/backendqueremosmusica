@@ -17,7 +17,7 @@ const EnvioEmail = async (req, res = response)=>{
             from: process.env.MAIL_USERNAME, // sender address
             to: email, // list of receivers
             subject: subject, // Subject line
-            html: "<p>La persona "+name+"con el correo "+email+" adjunta el siguiente mensaje:</p><p>"+body+"</p>", // html body
+            html: "<p>"+name+" con el correo "+email+" adjunta el siguiente mensaje:</p><br/>"+body, // html body
         });
         res.status(200).json({
             message:'OK'
